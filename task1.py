@@ -45,7 +45,6 @@ class Utilities():
 class PredictPrice():
 
     def __init__(self, dateIn : str):
-        print("PredictPrice ABC" )
         self.dateIn = dateIn
         self.fileName = FILE_NAME
 
@@ -99,24 +98,8 @@ class PredictPrice():
             res = Utilities.process_x_from_float(res)
             
             prediction = Utilities.interp_y_from_x(res, x, y)
-        except:
+        except Exception as e:
+            print("Error in prediction: " + str(e))
             prediction = 0.0
     
         return float(prediction)
-
-# if __name__ == "__main__": 
-#     # Check if the correct number of arguments is provided
-#     warnings.filterwarnings('ignore', category=UserWarning)
-#     warnings.filterwarnings('ignore', category=RuntimeWarning)
-    
-#     if len(sys.argv) < 2:
-#         print("Usage: python script.py <arg1> <arg2>")
-#         exit(0)
-
-
-#     # Accessing arguments
-#     script_name = sys.argv[0]
-#     first_argument = sys.argv[1]
-#     pp = PredictPrice(first_argument)
-#     print(pp.runner())
-    
