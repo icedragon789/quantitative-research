@@ -119,8 +119,8 @@ if __name__ == "__main__":
         input_prediction = [[0, 76750.28031, 8, 6606]]
         print("Using default input for prediction: " + str(input_prediction))
 
-    predictions = models[1].predict(input_prediction)
-    class_probabilities = models[1].predict_proba(input_prediction)
+    predictions = models[MODEL_NUM].predict(input_prediction)
+    class_probabilities = models[MODEL_NUM].predict_proba(input_prediction)
 
     default = bool(predictions[0])
     if default == True:
